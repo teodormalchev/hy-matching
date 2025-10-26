@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+
+<style>
+    .apology-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 60%; /* Adjust the percentage to control the size */
+        height: auto;
+        border: 5px solid #444; /* Solid border for frame */
+        padding: 10px; /* Space between image and frame */
+        background-color: #fff; /* Background color for the frame area */
+        box-shadow: 0px 0px 10px #888; /* Optional: Adds shadow for depth */
+    }
+
+    .apology-message {
+        text-align: center;
+        margin-top: 20px; /* Space between image and text */
+        font-size: 1.5em; /* Slightly larger font size */
+        font-weight: bold; /* Makes the text bold */
+        color: #333; /* Choose a readable text color */
+    }
+</style>
+
+<div style="height: 100vh; width: 100vw">
+    <div style="margin-top: 15vh">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <img alt="{{ top }}" class="border img-fluid apology-image" src="static/images/DallE_Crying_Bulldog.png" title="{{ top }}">
+                <div class="apology-message">
+                    <p>Errror {{top}}: {{ bottom }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

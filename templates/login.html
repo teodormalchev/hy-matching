@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+<div class="register-container">
+    <div class="register-box shadow p-3 mb-5" style="background-color: #ffffff;">
+        <img src="static/Images/HY.PNG" style="width: 50px; height:auto">
+        <b><p>Login</p></b>
+        <form action="/login" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="email" name="email" placeholder="Email address" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control" id="password" name="password" placeholder="Password" type="password">
+            </div>
+            <button class="btn btn-primary" type="submit" style="margin-top: 2vh">Log In</button>
+        </form>
+        
+        <div class="mt-3 text-center">
+            <span>New to HY?  <b><a style="text-decoration: none" href="/register">Join now</a></b></span>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

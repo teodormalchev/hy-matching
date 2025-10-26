@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<div class="register-container">
+    <div class="register-box shadow p-3 mb-5">
+        <img src="static/Images/HY.PNG" style="width: 50px; height:auto">
+        <b><p>Register</p></b>
+
+        <form action="/register" method="post" style="margin-top: 3vh">
+            
+            <div class="side-by-side">
+                <div class="mb-3" style="margin-right: 1vw;">
+                    <input required autocomplete="off" autofocus class="form-control" id="fname" name="fname" placeholder="First name" type="text">
+                </div>
+            
+                <div class="mb-3">
+                    <input required autocomplete="off" autofocus class="form-control" id="lname" name="lname" placeholder="Last name" type="text">
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <input required autocomplete="off" autofocus class="form-control" id="email" name="email" placeholder="Email address" type="text">
+            </div>
+        
+            <div class="mb-3">
+                <input required autocomplete="off" autofocus class="form-control" id="phone" name="phone" placeholder="Phone number" type="text">
+            </div>
+        
+            <div class="side-by-side">
+                <div class="mb-3">
+                    <select required class="form-control" id="class_year" name="class_year">
+                        <option value="" disabled selected>Class Year</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                    </select>
+                </div>
+            
+                <div class="mb-3">
+                    <select required class="form-control" id="gender" name="gender">
+                        <option value="" disabled selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </div>
+            
+        
+            <div class="mb-3">
+                <input required class="form-control" id="password" name="password" placeholder="Password" type="password">
+            </div>
+        
+            <div class="mb-3">
+                <input required class="form-control" id="confirmation" name="confirmation" placeholder="Confirm password" type="password">
+            </div>
+        
+            <button class="btn btn-primary" type="submit" style="margin-top: 2vh">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

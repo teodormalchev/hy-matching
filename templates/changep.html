@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change password
+{% endblock %}
+
+{% block main %}
+<div class="register-container">
+    <div class="register-box shadow p-3 mb-5" style="background-color: #ffffff;">
+        <img src="static/Images/HY.PNG" style="width: 50px; height:auto">
+        <b><p>Login</p></b>
+        <form action="/changep" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="oldP" placeholder="Current password" type="text" required>
+            </div>
+
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="newP" placeholder="New password" type="text" required>
+            </div>
+
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="confP" placeholder="Confirm new password" type="text" required>
+            </div>
+
+            <br>
+
+            <button class="btn btn-primary" type="submit">Change Password</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

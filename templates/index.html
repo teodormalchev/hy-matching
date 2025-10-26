@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block main %}
+
+<section id="section1" class="content-container" >
+  <div class="centered-content">
+      <b><p style="font-size: 80px">Welcome to <img src="static/Images/HY.PNG" style="width:20%; height:auto; margin-left: 10px"></p></b>
+      <p style="font-size: 30px; margin-bottom: 20px">Where WE help YOU find a place to stay</p>
+      <div class="btn-container">
+        <a class="btn btn-primary Yale" href="/form" role="button">Find Housing</a>
+        <a class="btn btn-primary Harvard" href="/form" role="button" style="margin-left: 20px">Become A Host</a>
+      </div>
+      <img src="static/Images/Arrows.png" style="width:20%; height: auto;">
+  </div>
+</section>
+
+<div class="text-center fadeInOnScroll" style="padding: 250px 0px;">
+    <b><p style="font-size: 55px;">But first, the basics.</p></b>
+</div>
+
+<div class="boxes">
+    <div class="box text-center shadow p-3 mb-5" id="findHousing">
+        <h3>Find Housing</h3>
+        <p>Need a place to stay? No problem! That's where we come into play.</p>
+        <a class="btn btn-primary btn-sm" href="/form" role="button" style="background-color: #0E4A7B; border:none;">Find Housing</a>
+    </div>
+
+    <div class="box text-center shadow p-3 mb-5" id="howItWork">
+        <h3>How it works</h3>
+        <p>We ask you a couple of questions regarding important factors such as sleep schedule, party schedule, and more, and then match you with the host that has the most similar schedule as you.</p>
+       
+        <a class="btn btn-primary btn-sm" href="/hdiw" role="button" style="border:none;">More on this</a>
+    </div>
+
+    <div class="box text-center shadow p-3 mb-5" id="becomeAHost">
+        <h3>Become A Host</h3>
+        <p>Have a place to stay? Even better! Answer a few questions to host someone!</p>
+        
+        <a class="btn btn-primary btn-sm" href="/form" role="button" style="background-color: #b02e41; border:none">Become a host</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+
+<div class="account-container ">
+
+    <h1 class="mb-2 text-center shadow p-3 mb-5 title-bubble">Account Information</h1>
+
+    <form action="/account" method="post">
+
+        <!-- Profile Information Section -->
+        <div class="account-box">
+            
+            <div class="profile-info shadow p-3 mb-5">
+                <h2 class="mb-3 text-start">Profile Information</h2>
+                <p class="text-start">First name: <input type="text" name="fname" value="{{ user.fname }}"></p>
+                <p class="text-start">Last name: <input type="text" name="lname" value="{{ user.lname }}"></p>
+                <p class="text-start">Email: <input type="text" name="email" value="{{ user.email }}" readonly></p>
+                <p class="text-start">Phone: <input type="text" name="phone" value="{{ user.phone }}"></p>
+                <p class="text-start">Class of: 
+                    <select name="class_year">
+                        <option value=2025 {% if user.class_year == 2025 %} selected {% endif %}>2025</option>
+                        <option value=2026 {% if user.class_year == 2026 %} selected {% endif %}>2026</option>
+                        <option value=2027 {% if user.class_year == 2027 %} selected {% endif %}>2027</option>
+                        <option value=2028 {% if user.class_year == 2028 %} selected {% endif %}>2028</option>
+                    </select>
+                </p>
+                <p class="text-start">Gender: 
+                    <select name="gender">
+                        <option value="male" {% if user.gender == 'male' %} selected {% endif %}>Male</option>
+                        <option value="female" {% if user.gender == 'female' %} selected {% endif %}>Female</option>
+                    </select>
+                </p>
+    
+                <!-- Change Password Link -->
+                <p class="text-start mt-3">
+                    <a class="btn btn-secondary btn-sm" href="/changep">Change Password</a>
+                </p>
+            </div>
+    
+            <!-- Match Information Section -->
+            <div class="match-info shadow p-3 mb-5">
+                <h2 class="mb-3 text-start">Match Information</h2>
+
+
+                <!-- Same Gender Preference -->
+                <p class="text-start">
+                    Same gender:
+                    <input type="radio" id="same_gender_yes" name="same_gender" value=1 {% if user["same_gender"] == 1 %} checked {% endif %}>
+                    <label for="same_gender_yes">Yes</label>
+                    <input type="radio" id="same_gender_no_preference" name="same_gender" value=0 {% if user["same_gender"] == 0 %} checked {% endif %}>
+                    <label for="same_gender_no_preference">No preference</label>
+                </p>
+
+    
+                <!-- Same Class Preference -->
+                <p class="text-start">
+                    Same class:
+                    <input type="radio" id="same_class_yes" name="same_class" value=1 {% if user["same_class"] == 1 %} checked {% endif %}>
+                    <label for="same_class_yes">Yes</label>
+                    <input type="radio" id="same_class_no_preference" name="same_class" value=0 {% if user["same_class"] == 0 %} checked {% endif %}>
+                    <label for="same_class_no_preference">No preference</label>
+                </p>
+    
+                <!-- Partying Preference -->
+                <p class="text-start">
+                    Partying preference: <output id="partyValue">{{ user['party'] if user['party'] is not none else 'None' }}</output>
+                </p>
+                <p class="text-start">
+                    <span><em>(No party) 0  </em></span>
+                    <input type="range" id="party" name="party" min="0" max="5" value="{{ user['party'] if user['party'] is not none else 0 }}" oninput="document.getElementById('partyValue').textContent = party.value">
+                    <span><em>  5 (This is the night)</em></span>
+                </p>
+    
+                <!-- Bedtime Preference -->
+                <p class="text-start">
+                    Bedtime preference:
+                    <select name="bed_hour">
+                        <option value="" {% if user["bed_hour"] not in [8, 10, 12, 14, 16] %} selected {% endif %} disabled>None selected</option>
+                        <option value=8 {% if user["bed_hour"] == 8 %} selected {% endif %}>8pm-10pm</option>
+                        <option value=10 {% if user["bed_hour"] == 10 %} selected {% endif %}>10pm-12am</option>
+                        <option value=12 {% if user["bed_hour"] == 12 %} selected {% endif %}>12am-2am</option>
+                        <option value=14 {% if user["bed_hour"] == 14 %} selected {% endif %}>2am-4am</option>
+                        <option value=16 {% if user["bed_hour"] == 16 %} selected {% endif %}>4am+</option>
+                    </select>
+                </p>
+            
+                <!-- Alcohol Comfortability -->
+                <p class="text-start">
+                    Alcohol preference:
+                    <select name="alcohol">
+                        <option value="" {% if user["alcohol"] not in [0, 1, 2] %} selected {% endif %} disabled>None selected</option>
+                        <option value=2 {% if user["alcohol"] == 2 %} selected {% endif %}>Yes</option>
+                        <option value=1 {% if user["alcohol"] == 1 %} selected {% endif %}>Yes, but not too much</option>
+                        <option value=0 {% if user["alcohol"] == 0 %} selected {% endif %}>No</option>
+                    </select>
+                </p>
+    
+            </div>
+
+        </div>
+            <!-- Save changes -->
+            <button type="submit" class="btn btn-light btn-lg mb-3">Save Changes</button>
+    </form>
+</div>
+
+{% endblock %}

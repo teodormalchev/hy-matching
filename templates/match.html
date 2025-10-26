@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+  Match
+{% endblock %}
+
+
+{% block main %}
+
+
+<style>
+   .dot {
+       position: absolute;
+       border-radius: 50%;
+       width: 8px; /* Size of dots */
+       height: 8px; /* Size of dots */
+       opacity: 0.6;
+       z-index: -1;
+   }
+   .text-card {
+       background: rgba(255, 255, 255, 0.85);
+       border: none;
+       margin-bottom: 1rem;
+       padding: 1rem;
+   }
+</style>
+
+
+<div class="container my-4">
+  {% if matches_done %}
+      {% if match != -1 %}
+       <div class="row justify-content-center">
+           <div class="col-md-10">
+               <!-- Match Info -->
+               <div class="text-card">
+                   <h2 class="text-center">You have been matched!</h2>
+                   <br>
+                   <p>Here is your match's information:</p>
+                   <p><strong>Name:</strong> {{ match["fname"] }} {{ match["lname"] }}</p>
+                   <p><strong>Email:</strong> {{ match["email"] }}</p>
+                   <p><strong>Phone:</strong> {{ match["phone"] }}</p>
+                   <p><strong>Gender:</strong> {{ match["gender"] }}</p>
+                   <p><strong>Class of:</strong> {{ match["class_year"] }}</p>
+               </div>
+
+
+               <!-- Housing Advice -->
+               <div class="text-card">
+                   <h2 class="text-center">A few pieces of advice before the game</h2>
+                   <br>
+                   <ul>
+                       <li>Communicate early with your match to arrange housing details.</li>
+                       <li>Discuss and agree upon arrival and departure times.</li>
+                       <li>Be clear about what amenities will be provided and what you need to bring.</li>
+                       <li>Respect each other's space and privacy during your stay.</li>
+                       <li>Plan for transportation to and from the game in advance.</li>
+                       <li>Keep safety in mind: share your housing plans with a friend or family member.</li>
+                       <li>Enjoy the game and the unique experience of the Harvard-Yale rivalry!</li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+      {% else %}
+      <div class="match-container">
+          <div class="no-match">
+              <h2>Match Not Found</h2>
+              <p>We're sorry, but you have not been matched yet. Please check back later.</p>
+          </div>
+      </div>
+      {% endif %}
+  {% else %}
+  <div class="match-container">
+      <div class="matches_not_done">
+          <h2>Be patient...</h2>
+          <p>Matches have not been decided yet. Come back two weeks before the game.</p>
+          <b><p>Time until the game: </p></b> <p id="countdown"></p>
+      </div>
+  </div>
+  {% endif %}
+</div>
+
+
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+       var body = document.body;
+       var html = document.documentElement;
+       var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+
+       for (var i = 0; i < 100; i++) { // Number of dots
+           var dot = document.createElement('div');
+           dot.classList.add('dot');
+           dot.style.left = Math.random() * window.innerWidth + 'px';
+           dot.style.top = Math.random() * height + 'px';
+           dot.style.backgroundColor = Math.random() < 0.5 ? 'blue' : 'red';
+           body.appendChild(dot); // Append dots directly to body
+       }
+   });
+</script>
+
+
+{% endblock %}
+
+

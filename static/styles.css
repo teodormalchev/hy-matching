@@ -1,0 +1,361 @@
+/* General Styling */
+#section1 {
+    background: url('Images/Edit.png') center/cover;
+}
+
+#title {
+    font: bold 36px/1.5 Arial, sans-serif;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.collapse {
+    text-align: right;
+    font-size: 20px;
+}
+
+.fadeInOnScroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.fadeInOnScroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form Styling */
+.form-container {
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(Images/Widener.jpg) center/cover;
+}
+
+.form-box {
+    width: auto;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    background-color: #fffaf3;
+    margin-top: 110px;
+}
+
+.side-by-side {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-control {
+    width: 100%;
+}
+
+/* Team Styling */
+.team-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+}
+
+.team-box {
+    display: flex;
+    justify-content: space-between; /* Adjust the spacing between team members */
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    margin-top: 10vh;
+}
+
+.team-container img {
+    width: 100%; /* Make the images take up 100% of their parent container */
+    max-width: 200px; /* Set a maximum width for the images */
+    height: auto;
+}
+
+
+/* Box Styling */
+.box {
+    width: 30vw;
+    height: auto;
+    padding: 20px;
+    background-color: #faefe084;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+.box h3 {
+    font-size: 50px;
+}
+
+.box p {
+    padding: 20px;
+}
+
+/* Register Styling */
+.register-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('Images/Field-register.jpg') center/cover;
+}
+
+.register-box {
+    max-width: 400px;
+    width: auto;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 200px;
+}
+
+/* Content Container Styling */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.centered-content {
+    width: 60%;
+    text-align: center;
+    background-color: #ffffffd1;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navigation Styling */
+nav {
+    background-color: #faefe0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.34);
+}
+
+.nav-item .nav-link:hover {
+    transform: scale(1.05);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Button Styling */
+.Yale,
+.Harvard {
+    color: white;
+    border: none;
+    font-size: 20px;
+    width: 200px;
+    height: 60px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Yale {
+    background-color: #0e4a7b;
+}
+
+.Harvard {
+    background-color: #b02e41;
+}
+
+/* Match Container Styling */
+.match-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Account Styling */
+.b-bubble {
+    padding: 10px;
+    border-radius: 10px;
+    bottom: 20px;
+}
+
+.title-bubble {
+    margin-top: 15vh;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    padding: 10px;
+}
+
+.text-bubble {
+    width: 70%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    column-count: 3;  /* Set the number of columns */
+    column-gap: 20px; /* Adjust the gap between columns */
+}
+
+.text-bubble h3 {
+    column-span: all; /* Ensure the h3 spans all columns */
+}
+
+.text-bubble p {
+    text-align: left; /* Align the text to the left within columns */
+    margin: 0;        /* Remove default margin to avoid extra spacing */
+}
+
+.team-bubble {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    padding: 10px;
+    margin: 10vw 10vh;
+}
+
+#top-right {
+    position: absolute;
+    top: 7.5vh;
+    right: 2vw;
+}
+
+#top-right a.btn {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.account-container {
+    height: 100vh;
+    width: 100vw;
+    margin-bottom: 10px; /* Adjust margin as needed */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, rgb(255, 97, 97), rgb(79, 79, 255));
+}
+
+.account-box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    max-width: 800px;
+}
+
+.profile-info,
+.match-info {
+    flex: 0 0 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.account-actions {
+    margin-top: 20px;
+}
+
+/* Hub Styling */
+.hub-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("Images/YaleStadium.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hub-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Timeline Styling */
+.timeline-box {
+    width: 40vw;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.numbers {
+    width: 5vw;
+    height: auto;
+    display: block;
+    margin: 0 5vw;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .form-container, .register-container, .team-container, .content-container {
+        height: auto;
+    }
+
+    .box, .register-box, .hub-box, .timeline-box {
+        width: 80%;
+    }
+
+    .team-box > div {
+        flex-basis: 100%; /* Set full width for each team member on smaller screens */
+    }
+
+    .account-box, .profile-info, .match-info {
+        flex: 0 0 calc(100% - 1rem);
+        max-width: calc(100% - 1rem);
+    }
+}
+
+@media (min-width: 768px) {
+    .account-box {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .profile-info {
+        width: 48%; /* Adjust as needed */
+    }
+}

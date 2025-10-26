@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    How does it work?
+{% endblock %}
+
+{% block body_class %}
+    p-with-dots <!-- THIS TELLS IT TO ADD DOTS -->
+{% endblock %}
+
+{% block main %}
+<div style="margin-top: 10vh">
+    <div id="title">
+        How Does It Work?
+    </div>
+    <div class="team-bubble shadow p-3 mb-5">
+        <b><p>Teodor Malchev, lead developer of the matching process, what are the basics behind HY's algorithm?</p></b>
+        <p> All you have to do is register, fill out the matching form, and let us do the rest! Here is how our magical algorithm works:</p>
+        <ol>
+            <li><p><b>Categorization of Preferences: </b>We start by categorizing the information you provide in our form into two types: obligatory and optional. The obligatory factors are non-negotiable preferences that form the foundation of our matching process.</p></li>
+            <li><p><b>Formation of Unique Groups:</b>Based on these obligatory preferences, we divide students into 15 unique groups. This ensures that essential requirements are met in every match.</p></li>
+            <li><p><b>Categorization of Preferences: </b>We start by categorizing the information you provide in our form into two types: obligatory and optional. The obligatory factors are non-negotiable preferences that form the foundation of our matching process.</p></li>
+            <li><p><b>Incorporation of Optional Preferences:</b>Next, we use your optional preferences to fine-tune the matching process. This step focuses on aligning the expectations and desires for the stay, helping us pair guests and hosts from the same obligatory groups who are seeking a similar experience.</p></li>
+            <li><p><b>Dynamic Matching Process:</b>If initial matches are not found, our algorithm dynamically shifts unmatched users to adjacent preference groups. This iterative process continues, increasing the likelihood of finding a compatible match, while still prioritizing the core obligatory preferences.</p></li>
+            <li><p><b>Balancing Demand and Supply:</b>We recognize that there are often more guests seeking housing than available hosts. In such cases, our algorithm works tirelessly to maximize matches. However, it's important to note that finding a match for every user can be challenging when facing a surplus of guests.</p></li>
+            <li><p><b>Objective and Unbiased:</b>Our algorithm is designed to be 100% objective and unbiased. It operates solely on the preferences you provide, ensuring fairness and impartiality in every match.</p></li>
+            <li><p><b>Final Outcomes:</b>While our system strives to match every user, in instances where an imbalance between guests and hosts exists, some guests may remain unmatched. We sincerely apologize if you find yourself in this situation. Please understand that this is a reflection of the numbers, not the effectiveness of our algorithm or your personal preferences.</p></li>
+            <li><p><b>Commitment to Perfect Matches:</b>Our goal is to ensure that every match is as perfect as possible, aligning guests with hosts who share similar preferences and expectations.</p></li>
+
+        </ol>
+    </div>
+    <div class="team-bubble shadow p-3 mb-5">
+        <h1 style="text-align: center;">Disclaimer</h1>
+        <p>Welcome to HY.com, the platform designed by students for students, to connect peers seeking housing with potential hosts. While we strive to facilitate meaningful and compatible matches based on housing preferences, we would like to make the following important points clear:
+
+            User Responsibility: HY.com acts solely as a facilitator to connect guests and hosts. Once a match is made, all interactions, agreements, and transactions are the sole responsibility of the users involved. We encourage both hosts and guests to communicate clearly and set mutual expectations before finalizing any arrangement.
+            
+            No Liability: HY.com and its creators, administrators, or affiliates are not responsible for the actions, behaviors, or conduct of any users, both hosts and guests, once they are matched. We do not monitor, supervise, or oversee the interactions and arrangements that occur between matched users.
+            
+            Due Diligence: We strongly recommend that all users exercise due diligence, caution, and common sense when interacting with other users on the platform. This includes, but is not limited to, verifying identities, discussing and agreeing upon clear terms for the housing arrangement, and understanding the expectations and responsibilities involved.
+            
+            No Endorsement: Matches made through HY.com do not constitute an endorsement of any user. We do not guarantee the accuracy, reliability, or truthfulness of any user’s profile information.
+            
+            Dispute Resolution: In the event of a dispute between users, the responsibility to resolve such disputes lies entirely with the involved parties. HY.com is not obligated to mediate or resolve any conflicts that arise from user interactions.
+            
+            We are committed to providing a platform that offers opportunities for connection based on housing preferences, but it is imperative that users understand and accept the limitations of our role in this process. Thank you for being a part of our community, and we wish you a successful and positive experience on HY.com.
+            </p>
+    </div>
+</div>
+{% endblock %}

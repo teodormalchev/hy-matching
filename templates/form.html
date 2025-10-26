@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Matching form
+{% endblock %}
+
+{% block main %}
+
+<div class="form-container">
+    <div class="form-box shadow p-3 mb-5">
+        <img src="static/Images/HY.PNG" style="width: 50px; height:auto; display: block; margin:0 auto">
+        <h1 class="mb-3" style="text-align:center;margin-top: 10px;">Matching Form</h1>
+
+        {% if user_progress >= 2 %}
+            {% if matches_done %}
+                <p>You have already filled the form, You can now check out your match results!</p>
+            {% else %}
+                <p>You have already filled the form, you just have to wait for your match.</p>
+                <p>If you want to modify your answers, you can access your information in your <a href="/account">account</a>.</p>
+            {% endif %}
+        {% else %}
+        
+        <form action="/form" method="post">
+            <ol>
+                <!-- Same Gender Preference -->
+                <li><b><p style="margin-top: 45px;">Do you want to get matched with someone of the same gender?</p></b></li>
+                <input type="radio" id="same_gender" name="same_gender" value=1>
+                <label for="same_gender">Yes</label><br>
+                <input type="radio" id="gender_no_preference" name="same_gender" value=0>
+                <label for="gender_no_preference">No preference</label><br>
+
+                <!-- Same Class Preference -->
+                <li><b><p style="margin-top: 45px;">Do you want to get matched with someone from the same class?</p></b></li>
+                <input type="radio" id="same_class" name="same_class" value=1>
+                <label for="same_class">Yes</label><br>
+                <input type="radio" id="same_classs" name="same_class" value=0>
+                <label for="class_no_preference">No preference</label><br>
+
+                <!-- Partying Preference -->
+                <li><b><p style="margin-top: 45px;">How much do you plan to party?</p></b></li>
+                <img src="static/Images/PartyEmojii.png" style="width:28px; height: auto;">: <output id="partyValue">0</output>
+                <div style="text-align: center; margin-bottom: 35px;">
+                    <span>Not planning on it  0</span>
+                    <input type="range" id="party" name="party" min="0" max="5" value="0" oninput="document.getElementById('partyValue').textContent = party.value">
+                    <span>5  Everyday is a party</span>
+                </div>
+
+                <!-- Bedtime Preference -->
+                <li><b><p style="margin-top: 45px;">How late do you plan on going to bed?</p></b></li>
+                <select name="bed_hour">
+                    <option value=8>8pm-10pm</option>
+                    <option value=10>10pm-12am</option>
+                    <option value=12>12am-2am</option>
+                    <option value=14>2am-4am</option>
+                    <option value=16>4am+</option>
+                </select><br>
+
+                <!-- Alcohol Comfortability -->
+                <li><b><p style="margin-top: 45px;">Are you comfortable having alcohol around?</p></b></li>
+                <input type="radio" id="alcohol" name="alcohol" value=2>
+                <label for="alocohol">Yes</label><br>
+                <input type="radio" id="alcohol" name="alcohol" value=1>
+                <label for="alcohol_yes_but">Yes, but not too much</label><br>
+                <input type="radio" id="alcohol" name="alcohol" value=0>
+                <label for="alcohol_no">No</label><br>
+            </ol>
+            <!-- Submit Button -->
+            <div style="text-align: center;">
+                <button style="text-align: center;" type="submit" class="btn btn-primary mt-3">Submit</button>
+            </div>
+        </form>
+
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

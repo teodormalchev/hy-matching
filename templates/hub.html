@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+    <div class="hub-container">
+        <div class="hub-box shadow p-3 mb-5">
+            <!-- Title -->
+            <div class="title-bubble shadow p-3 mb-5">
+                <h1> Welcome to your personal Hub!</h1>
+            </div>
+
+            <div class="timeline-box shadow p-3 mb-5">
+                <h2>
+                    You have completed {{ user_progress  }}/4 tasks
+                </h2>
+                
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
