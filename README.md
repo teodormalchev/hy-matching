@@ -27,14 +27,5 @@ Additionally, the variable _matches_done_ on line 30 in app.py can be changed to
 ---
 
 The principles of HY.com (what the platform is used for, how users get connected, ...) are explained on the site itself, and you can find a video rundown here:
-https://youtu.be/xvFZjo5PgG0?feature=shared)https://youtu.be/xvFZjo5PgG0?feature=shared
-
-
-
-
-
-
-Sorry, we had to...
-Here is the acual link ;)
 https://youtu.be/-6r8dPIDVqs
 
